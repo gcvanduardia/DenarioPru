@@ -1,0 +1,51 @@
+<ion-header *ngIf="db.producto">
+  <ion-toolbar color="new">
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{db.producto.nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="db.producto">
+
+  <ion-grid class="ion-no-padding" fixed>
+    <ion-row>
+      <ion-col size="12">
+        
+        <ion-slides pager="true" [options]="slideOpts">
+          <ion-slide *ngFor="let foto of db.prodfotos">
+            <ion-card>
+              <ion-img [src]="foto"></ion-img>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      
+        <div class="ion-padding">
+          <ion-text color="light">
+            <h3>{{db.producto.descripcion}}</h3>
+          </ion-text>
+          <ion-text color="light">
+            <h1>{{db.producto.precio | currency:'COL':'$':'.0'}}</h1>
+          </ion-text>
+        </div>
+      
+        
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" (click)="db.borrarProductoAlertConfirm()">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button color="primary" (click)="db.irUploadProducto()">
+      <ion-icon name="create"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
