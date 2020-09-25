@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="new">
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="12">
+
+      <ion-card>
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Nombre:</ion-label>
+            <ion-input type="text" [(ngModel)]="db.newName"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Descripción:</ion-label>
+            <ion-input type="text" [(ngModel)]="db.newDescripcion"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Precio:</ion-label>
+            <ion-input type="number" [(ngModel)]="db.newPrecio"></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-item lines="none" *ngIf="db.newfotos.length > 0"> <ion-label>Fotos:</ion-label> </ion-item>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6" size-sm="6" size-md="4" size-lg="3" size-xl="2" *ngFor="let foto of db.newfotos">
+              <!-- <ion-img [src]="foto.blob"></ion-img> -->
+              <img src={{foto}} alt="">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-button (click)="db.addProduct()" shape="round" expand="block" color="new">
+          Crear
+        </ion-button>
+      </ion-card>
+
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+  
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button color="success" (click)="db.takeImgNewProd()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
