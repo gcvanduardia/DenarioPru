@@ -1,0 +1,38 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+ion-content{
+    --background: #1e5799; /* Old browsers */
+    --background: -moz-linear-gradient(top, #1e5799 0%, #207cca 12%, #207cca 12%, #207cca 17%, #2989d8 26%, #7db9e8 100%); /* FF3.6-15 */
+    --background: -webkit-linear-gradient(top, #1e5799 0%,#207cca 12%,#207cca 12%,#207cca 17%,#2989d8 26%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+    --background: linear-gradient(to bottom, #1e5799 0%,#207cca 12%,#207cca 12%,#207cca 17%,#2989d8 26%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+ion-card{
+    border-radius: 15px;
+}
